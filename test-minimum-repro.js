@@ -1,8 +1,6 @@
 const Web3 = require('web3');
 const web3 = new Web3('http://localhost:22001');
 
-console.log('Retrieving account and balance..');
-
 async function sendTransactionUsingSign() {
   const account = web3.eth.accounts.privateKeyToAccount(
     // node 1 private key
@@ -38,6 +36,7 @@ async function sendTransactionUsingUnlock() {
   console.log('Result of transaction:', receipt);
 }
 
+console.log('Retrieving account and balance..');
 sendTransactionUsingSign()
   .then(() => console.log('done using sign'))
   .catch(console.error)
