@@ -26,7 +26,7 @@ async function sendTransactionUsingUnlock() {
   
   web3.eth.personal.unlockAccount(address, '');
 
-  const receipt = web3.eth.sendTransaction({
+  const receipt = await web3.eth.sendTransaction({
     from: address,
     to: '0xedbbe1fa6bc80f55c9ac7e351b777874142baaf8', // node 2
     value: 1,
