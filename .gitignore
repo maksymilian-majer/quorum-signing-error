@@ -1,0 +1,11 @@
+node_modules/
+
+*/constellation/*
+*/dd/*
+!*/dd/keystore
+!*/dd/geth/*.*
+!*/dd/static-nodes.json
+!*/dd/nodekey
+*/logs/*
+!*/logs/.gitkeep
+!*/logs/.gitkeep

@@ -1,0 +1,40 @@
+version: '2'
+services:
+  node_1:
+    image: jakedavies/quorum-node:v2.0.1
+    volumes:
+      - './qdata_1:/qdata'
+    networks:
+      quorum_network:
+        ipv4_address: '172.14.0.2'
+    ports:
+      - 22001:8545
+    user: '501:20'
+  node_2:
+    image: jakedavies/quorum-node:v2.0.1
+    volumes:
+      - './qdata_2:/qdata'
+    networks:
+      quorum_network:
+        ipv4_address: '172.14.0.3'
+    ports:
+      - 22002:8545
+    user: '501:20'
+  node_3:
+    image: jakedavies/quorum-node:v2.0.1
+    volumes:
+      - './qdata_3:/qdata'
+    networks:
+      quorum_network:
+        ipv4_address: '172.14.0.4'
+    ports:
+      - 22003:8545
+    user: '501:20'
+
+networks:
+  quorum_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.14.0.0/16
